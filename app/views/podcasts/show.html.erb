@@ -26,62 +26,26 @@
   <div id="episodes">
     <div class="wrapper_skinny">
       <ul class="cf">
-        <li class="cf">
-          <div class="episode_thumbnail">
-            <a href="episode.html">
-              <img src="images/pieter_levels.png" alt="Pieter Levels">
-            </a>
-          </div>
 
-          <div class="episode_overview">
-            <h2>
-              <a href="episode.html">
-                How to Pull Off 12 (Well Executed) Startups in 12 Months
+        <% @episodes.each do |episode| %>
+          <li class="cf">
+            <div class="episode_thumbnail">
+              <a href="#">
+                <img src="images/pieter_levels.png" alt="Pieter Levels">
               </a>
-            </h2>
-            <p class="description">
-              Pieter Levels, founder of Levels.io, talks about how he's building 12 startups in 12 months. Not only do we cover how he's able to pull that off( and to wi...
-            </p>
-          </div>
-        </li>
+            </div>
 
-        <li class="cf">
-          <div class="episode_thumbnail">
-            <a href="episode.html">
-              <img src="images/pieter_levels.png" alt="Pieter Levels">
-            </a>
-          </div>
+            <div class="episode_overview">
+              <h2>
+                <%= link_to episode.title, podcast_episode_path(@podcast, episode) %>
+              </h2>
+              <p class="description">
+                <%= truncate(episode.description, length: 400) %>
+              </p>
+            </div>
+          </li>
+        <% end %>
 
-          <div class="episode_overview">
-            <h2>
-              <a href="episode.html">
-                How to Pull Off 12 (Well Executed) Startups in 12 Months
-              </a>
-            </h2>
-            <p class="description">
-              Pieter Levels, founder of Levels.io, talks about how he's building 12 startups in 12 months. Not only do we cover how he's able to pull that off( and to wi...
-            </p>
-          </div>
-        </li>
-
-        <li class="cf">
-          <div class="episode_thumbnail">
-            <a href="episode.html">
-              <img src="images/pieter_levels.png" alt="Pieter Levels">
-            </a>
-          </div>
-
-          <div class="episode_overview">
-            <h2>
-              <a href="episode.html">
-                How to Pull Off 12 (Well Executed) Startups in 12 Months
-              </a>
-            </h2>
-            <p class="description">
-              Pieter Levels, founder of Levels.io, talks about how he's building 12 startups in 12 months. Not only do we cover how he's able to pull that off( and to wi...
-            </p>
-          </div>
-        </li>
       </ul>
     </div>
   </div>

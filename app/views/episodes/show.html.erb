@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Podcast.tech</title>
+    <link rel="stylesheet" href="css/application.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    <div id="podcast_show">
+      <div id="show_banner">
+        <div class="wrapper_skinny">
+          <h1>The Rocketship Podcast</h1>
+          <p class="description">
+            Post-ironic cliche synth, before they sold out butcher distillery keytar. VHS beard yr fingerstache 8-bit chruch-key. YOLO viral. Lo-fi Godard fixie pour-over Wes Andersen Neutra, Pinterest cardigan Kickstarter craft beer synth taxidermy tofu gastropub.
+          </p>
+          <a href="#" class='subscribe_link'>iTunes</a>
+          <a href="#" class='subscribe_link'>Stitcher</a>
+          <a href="#" class='subscribe_link'>PodBay</a>
+        </div>
+      </div>
+
+      <div id="breadcrumb">
+        <a href="#">
+          <%= link_to "All Podcasts", podcasts_path %>
+          <span>/</span>
+          <%= link_to @podcast.title, @podcast %>
+          <span>/</span>
+          <%= @podcast.title %>
+        </a>
+      </div>
+
+      <div id="episode_content">
+        <div class="wrapper_skinny">
+          <img src="images/pieter_levels.png" alt="Pieter Levels" class='current_episode_thumbnail'>
+          <h2><%= @episode.title %></h2>
+          <p class="description">
+            <%= @episode.description %>
+          </p>
+        </div>
+      </div>
+
+      <div id="episodes">
+        <div class="wrapper_skinny">
+          <ul class="cf">
+            
+            <% @episodes.each do |episode| %>
+              <li class="cf">
+                <div class="episode_thumbnail">
+                  <a href="episode.html">
+                    <img src="images/pieter_levels.png" alt="Pieter Levels">
+                  </a>
+                </div>
+
+                <div class="episode_overview">
+                  <h2>
+                    <h2>
+                      <%= link_to episode.title, podcast_episode_path(@podcast, episode) %>
+                    </h2>
+                    <p class="description">
+                      <%= truncate(episode.description, length: 400) %>
+                    </p>
+                </div>
+              </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <span class="previous_page disabled">Previous</span>
+      <em class="current">1</em>
+      <a href="#">2</a>
+      <a href="#" class="next_page">Next</a>
+    </div>
+  </body>
+</html>
