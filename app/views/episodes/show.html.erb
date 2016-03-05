@@ -39,7 +39,7 @@
 
       <div id="episode_content">
         <div class="wrapper_skinny">
-          <img src="images/pieter_levels.png" alt="Pieter Levels" class='current_episode_thumbnail'>
+          <%= image_tag @episode.episode_thumbnail.url(:medium), class: 'current_episode_thumbnail' %>
           <h2><%= @episode.title %></h2>
           <p class="description">
             <%= @episode.description %>
@@ -55,18 +55,17 @@
               <li class="cf">
                 <div class="episode_thumbnail">
                   <a href="episode.html">
-                    <img src="images/pieter_levels.png" alt="Pieter Levels">
+                    <%= image_tag episode.episode_thumbnail.url(:medium) %>
                   </a>
                 </div>
 
                 <div class="episode_overview">
                   <h2>
-                    <h2>
-                      <%= link_to episode.title, podcast_episode_path(@podcast, episode) %>
-                    </h2>
-                    <p class="description">
-                      <%= truncate(episode.description, length: 400) %>
-                    </p>
+                    <%= link_to episode.title, podcast_episode_path(@podcast, episode) %>
+                  </h2>
+                  <p class="description">
+                    <%= truncate(episode.description, length: 400) %>
+                  </p>
                 </div>
               </li>
             <% end %>
