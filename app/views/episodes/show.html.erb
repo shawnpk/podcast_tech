@@ -27,7 +27,7 @@
           <span>/</span>
           <%= link_to @podcast.title, @podcast %>
           <span>/</span>
-          <%= @podcast.title %>
+          <%= @episode.title %>
         </a>
       </div>
 
@@ -44,7 +44,7 @@
       <div id="episodes">
         <div class="wrapper_skinny">
           <ul class="cf">
-            
+
             <% @episodes.each do |episode| %>
               <li class="cf">
                 <div class="episode_thumbnail">
