@@ -15,9 +15,15 @@
           <p class="description">
             Post-ironic cliche synth, before they sold out butcher distillery keytar. VHS beard yr fingerstache 8-bit chruch-key. YOLO viral. Lo-fi Godard fixie pour-over Wes Andersen Neutra, Pinterest cardigan Kickstarter craft beer synth taxidermy tofu gastropub.
           </p>
-          <a href="#" class='subscribe_link'>iTunes</a>
-          <a href="#" class='subscribe_link'>Stitcher</a>
-          <a href="#" class='subscribe_link'>PodBay</a>
+          <% unless @podcast.itunes.blank? %>
+            <a href="<%= @podcast.itunes %>" class='subscribe_link'>iTunes</a>
+          <% end %>
+          <% unless @podcast.stitcher.blank? %>
+            <a href="<%= @podcast.stitcher %>" class='subscribe_link'>Stitcher</a>
+          <% end %>
+          <% unless @podcast.podbay.blank? %>
+            <a href="<%= @podcast.podbay %>" class='subscribe_link'>PodBay</a>
+          <% end %>
         </div>
       </div>
 
