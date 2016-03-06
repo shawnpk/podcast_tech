@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'paperclip', '~> 4.3', '>= 4.3.5'
 gem 'aws-sdk', '< 2.0'
+gem 'font-awesome-sass-rails', '~> 3.0', '>= 3.0.2.2'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
