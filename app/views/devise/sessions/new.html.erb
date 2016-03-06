@@ -1,3 +1,7 @@
+<div id="banner" class='sign_in_banner'>
+  <h1>Welcome back...</h1>
+</div>
+
 <div id="form">
   <div class="wrapper_skinny">
 
@@ -20,10 +24,10 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "Log in", class: 'button button_highlight' %>
       </div>
     <% end %>
-
+    <br>
     <%= render "devise/shared/links" %>
   </div>
 </div>
